@@ -36,20 +36,7 @@ fn main() {
     println!("Please enter your state");
     loop {
         let mut buffer = String::new();
-        // let _ = io::stdin().read_line(&mut buffer).or_else(|err| {
-        //     println!("Error when reading input");
-        //     Err(err)
-        // });
 
-        // let _ = PowerState::new(&buffer)
-        //     .and_then(|state| {
-        //         state.println();
-        //         Ok(())
-        //     })
-        //     .or_else(|err| {
-        //         println!("{err}");
-        //         Err(err)
-        //     });
         if io::stdin().read_line(&mut buffer).is_err() {
             println!("Error when reading input");
             break;

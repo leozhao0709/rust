@@ -1,4 +1,4 @@
-use std::{borrow::BorrowMut, collections::HashMap, slice::SliceIndex, vec};
+use std::vec;
 
 #[derive(Debug, Clone, Copy)]
 struct RGB(i32, i32, i32);

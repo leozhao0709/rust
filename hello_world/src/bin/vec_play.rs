@@ -39,7 +39,7 @@ pub fn main() {
     }
     println!("{c:?}");
 
-    println!("{}", vec![1, 2, 3] == vec![1, 2, 3])
+    println!("{}", vec![1, 2, 3] == vec![1, 2, 3]);
 
     // let mut v = vec![1, 2, 3, 4];
 
@@ -51,4 +51,15 @@ pub fn main() {
     // v.push(5);
 
     // println!("first = {first}");
+
+    let mut a = vec![1, 2, 3, 4, 5];
+    // for i in 0..a.len() {
+    //     if a[i] < 3 {
+    //         a[i] += 10
+    //     }
+    // }
+
+    let b = &mut a;
+    b[0] += 10;
+    print!("{a:?}");
 }

@@ -10,9 +10,12 @@ mod private_module {
 
 fn main() {
     // Error: `private_module` is private
-    private_module::public_function();
+    // private_module::public_function();
 
     // Also, using `use` will result in an error
     // use private_module::public_function;
     // public_function();
+
+    let i = 5;
+    println!("{}", i / 2);
 }
