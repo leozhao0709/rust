@@ -28,6 +28,10 @@ pub fn main() {
 
     let s = String::from("你好");
     println!("s length = {}, s[0..3] = {}", s.len(), &s[0..3]);
+
+    let s = r#"Hello, 
+    "world"!"#;
+    println!("{:?}", s);
 }
 
 fn cal_len(s: &str) -> usize {

@@ -3,7 +3,7 @@ use std::vec;
 #[derive(Debug, Clone, Copy)]
 struct RGB(i32, i32, i32);
 
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 struct Node {
     val: RGB,
 }
@@ -40,9 +40,19 @@ fn main() {
         },
     ]);
 
-    let node2_val = node_collection.get_node_mut(1).val;
+    let node2 = node_collection.get_node_mut(1);
+    let node2_val = node2.val.0;
     let node1 = node_collection.get_node_mut(0);
-    node1.val.0 += node2_val.0;
+    node1.val.0 += node2_val;
 
     println!("{node_collection:?}");
+    let mut node3 = Node {
+        val: RGB(10, 20, 30),
+    };
+    println!("node3 is {node3:?}");
+    let node4 = &mut node3;
+    println!("node4 is {node4:?}");
+    node4.val.0 = 20;
+    println!("node4 is {node4:?}");
+    println!("node3 is {node3:?}");
 }
