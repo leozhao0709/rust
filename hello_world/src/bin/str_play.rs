@@ -1,4 +1,4 @@
-use unicode_segmentation::UnicodeSegmentation;
+// use unicode_segmentation::UnicodeSegmentation;
 
 pub fn main() {
     // let s1 = "🥹☹️🥳😒";
