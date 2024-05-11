@@ -1,0 +1,7 @@
+[workspace]
+
+resolver = "2"
+members = ["app01", "lib01"] # all packages
+default-members = [
+  "app01",
+] # only app/lib defined in `default-members` will be build, clean and test.
