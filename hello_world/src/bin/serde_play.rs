@@ -31,12 +31,14 @@ struct Dog {
     name: String,
     #[serde(with = "date_time_utc_format")]
     birthday: DateTime<Utc>,
+    age: Option<u8>,
 }
 
 fn main() {
     let dog = Dog {
         name: "d1".to_owned(),
         birthday: Utc::now(),
+        age: Some(5),
     };
 
     let json = serde_json::to_string(&dog).unwrap_or_default();
@@ -44,6 +46,7 @@ fn main() {
     let json_pretty = serde_json::to_string_pretty(&dog).unwrap_or_default();
     println!("{json_pretty:#?}");
 
-    let dog = serde_json::from_str::<Dog>(&json); // only accept &str
+    let json_str = r#"{"name": "d1", "birthday": "2024-10-21 05:18:27"}"#;
+    let dog = serde_json::from_str::<Dog>(json_str); // only accept &str
     println!("{dog:#?}");
 }
